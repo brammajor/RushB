@@ -6,7 +6,7 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 11:33:59 by brmajor           #+#    #+#             */
-/*   Updated: 2022/10/23 13:20:07 by brmajor          ###   ########.fr       */
+/*   Updated: 2022/10/23 13:31:34 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@ void	ft_putchar(char c);
 
 void	width_1(int x, int y, char corner, char dash)
 {
-
 	char	backspace;
 
 	backspace = '\n';
@@ -33,7 +32,6 @@ void	width_1(int x, int y, char corner, char dash)
 
 void	width_2(int x, int y, char pipe, char space)
 {
-
 	char	backspace;
 
 	backspace = '\n';
@@ -49,7 +47,6 @@ void	width_2(int x, int y, char pipe, char space)
 
 void	rush(int x, int y)
 {
-
 	char	corner;
 	char	dash;
 	char	pipe;
