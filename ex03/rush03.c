@@ -1,106 +1,76 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush02.c                                           :+:      :+:    :+:   */
+/*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 11:12:19 by brmajor           #+#    #+#             */
-/*   Updated: 2022/10/23 16:42:58 by brmajor          ###   ########.fr       */
+/*   Created: 2022/10/23 11:33:59 by brmajor           #+#    #+#             */
+/*   Updated: 2022/10/23 16:38:54 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	width_1(int x, int y, char a)
+void	width_1(int x, int y, char a, char c)
 {
+	char	backspace;
 	char	b;
-	char	d;
-	int		e;
 
+	backspace = '\n';
 	b = 'B';
-	d = '\n';
-	e = x - 2;
 	ft_putchar(a);
-	while (e > 0)
-	{	
-		ft_putchar(b);
-		e--;
-	}
-	if (e == 0)
-	{
-		ft_putchar(a);
-	}
-	ft_putchar(d);
-}
-
-void	width_2(int x, int y, char c)
-{
-	char	b;
-	char	d;
-	int		e;
-
-	b = 'B';
-	d = '\n';
-	e = x - 2;
-	ft_putchar(c);
-	while (e > 0)
+	while (x > 2)
 	{
 		ft_putchar(b);
-		e--;
+		x--;
 	}
-	if (e == 0)
+	if (x == 2)
 	{
 		ft_putchar(c);
 	}
-	ft_putchar(d);
+	ft_putchar(backspace);
 }
 
-void	width_3(int x, int y, char g)
+void	width_2(int x, int y, char space)
 {
+	char	backspace;
 	char	b;
-	char	d;
-	int		e;
 
+	backspace = '\n';
 	b = 'B';
-	d = '\n';
-	e = x - 2;
 	ft_putchar(b);
-	while (e > 0)
+	while (x > 2)
 	{
-		ft_putchar(g);
-		e--;
+		ft_putchar(space);
+		x--;
 	}
-	if (e == 0)
+	if (x == 2)
 	{
 		ft_putchar(b);
 	}
-	ft_putchar(d);
+	ft_putchar(backspace);
 }
 
 void	rush(int x, int y)
-{	
+{
 	char	a;
 	char	c;
-	char	g;
-	int		e;
-	int		f;
+	char	space;
 
 	a = 'A';
 	c = 'C';
-	g = ' ';
-	e = x - 2;
-	f = y - 2;
-	if (x < 1 || y < 1)
+	space = ' ';
+	if (x <= 0 || y <= 0)
 		return ;
-	width_1(x, y, a);
-	while (f > 0)
+	width_1(x, y, a, c);
+	while (y > 2)
 	{
-		width_3(x, y, g);
-		f--;
+		width_2(x, y, space);
+		y--;
 	}
 	if (y >= 2)
 	{
-		width_2(x, y, c);
+		width_1(x, y, a, c);
 	}
 }
